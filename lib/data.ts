@@ -231,9 +231,94 @@ export const education: Education[] = [
 
 export const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Analytics", href: "#analytics" },
   { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" },
 ];
+
+/* -------------------------------------------------------------------------- */
+/*  Analytics in action — illustrative, representative sample data (not        */
+/*  production figures) used to demonstrate the kind of analysis I build.      */
+/* -------------------------------------------------------------------------- */
+
+export const cohortData = {
+  months: ["M0", "M1", "M2", "M3", "M4", "M5"],
+  cohorts: [
+    { label: "Jan", values: [100, 84, 72, 65, 59, 55] },
+    { label: "Feb", values: [100, 87, 76, 68, 62, 58] },
+    { label: "Mar", values: [100, 81, 69, 61, 56, 52] },
+    { label: "Apr", values: [100, 89, 79, 72, 66, 61] },
+    { label: "May", values: [100, 85, 74, 67, 61, 57] },
+  ],
+};
+
+export type WaterfallStep = {
+  label: string;
+  value: number; // $K, signed
+  type: "total" | "pos" | "neg";
+};
+
+export const mrrWaterfall: WaterfallStep[] = [
+  { label: "Start", value: 120, type: "total" },
+  { label: "New", value: 28, type: "pos" },
+  { label: "Expansion", value: 14, type: "pos" },
+  { label: "Contraction", value: -6, type: "neg" },
+  { label: "Churn", value: -11, type: "neg" },
+  { label: "End", value: 145, type: "total" },
+];
+
+export const funnelData = [
+  { label: "Visitors", value: 100, note: "" },
+  { label: "Sign-up started", value: 46, note: "-54% bounce" },
+  { label: "Activated", value: 28, note: "mid-signup drop-off" },
+  { label: "Paid", value: 12, note: "+4% after fixes" },
+];
+
+export const spendTrend = [
+  { m: "Jan", spend: 2.1, roas: 2.3 },
+  { m: "Feb", spend: 2.6, roas: 2.5 },
+  { m: "Mar", spend: 2.9, roas: 2.4 },
+  { m: "Apr", spend: 3.3, roas: 2.7 },
+  { m: "May", spend: 3.7, roas: 2.9 },
+  { m: "Jun", spend: 4.1, roas: 3.1 },
+];
+
+export const caseStudy = {
+  eyebrow: "Case Study",
+  title: "How I caught a $22K revenue leak",
+  context: "Zocket · SaaS — AI Marketing",
+  steps: [
+    {
+      tag: "Problem",
+      heading: "Wallet balances didn't reconcile",
+      body: "Customer wallet balances and reported revenue were drifting apart month over month. Finance flagged that investor-facing numbers couldn't be fully trusted, but no one knew where the gap was coming from.",
+    },
+    {
+      tag: "Investigation",
+      heading: "Traced every transaction to its source",
+      body: "I reconciled wallet ledgers against Stripe charges and Facebook ad-spend webhooks line by line in SQL, then isolated entries that appeared more than once or violated configured spend limits.",
+    },
+    {
+      tag: "Insight",
+      heading: "A broken integration was double-counting",
+      body: "The Stripe and Facebook API integration was writing duplicate transactions and applying incorrect spending limits — silently inflating spend and leaking revenue on reconciliation.",
+    },
+    {
+      tag: "Action",
+      heading: "Fixed the logic, hardened the pipeline",
+      body: "I documented the bug for engineering, rebuilt the revenue-calculation logic, and added validation so duplicates and limit breaches were caught automatically going forward.",
+    },
+    {
+      tag: "Result",
+      heading: "$22K+ saved, discrepancies down 15%",
+      body: "Prevented $22K+ in revenue loss, cut revenue discrepancies by 15%, and restored confidence in the numbers used for investor relations and executive decisions.",
+    },
+  ],
+  outcomes: [
+    { value: "$22K+", label: "Revenue loss prevented" },
+    { value: "15%", label: "Discrepancy reduction" },
+    { value: "100%", label: "Investor-report accuracy" },
+  ],
+};
