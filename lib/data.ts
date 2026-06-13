@@ -4,7 +4,7 @@ export const profile = {
   location: "Chennai, Tamil Nadu, India",
   email: "gautham2597@gmail.com",
   phone: "+91-7092702458",
-  linkedin: "https://www.linkedin.com/in/gauthamgtg",
+  linkedin: "https://www.linkedin.com/in/gautham-mahadevan",
   github: "https://github.com/gauthamgtg",
   tagline: [
     "I turn messy data into decisions.",

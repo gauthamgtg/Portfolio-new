@@ -49,12 +49,22 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/20 md:inline-block"
-        >
-          Let&apos;s talk
-        </a>
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full px-4 py-2 text-sm text-white/65 transition-colors hover:bg-white/5 hover:text-white"
+          >
+            Résumé
+          </a>
+          <a
+            href="#contact"
+            className="rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/20"
+          >
+            Let&apos;s talk
+          </a>
+        </div>
 
         <button
           aria-label="Toggle menu"
@@ -83,6 +93,15 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="/resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="block rounded-xl px-4 py-3 text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              Résumé
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

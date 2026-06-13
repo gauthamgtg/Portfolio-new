@@ -87,6 +87,9 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           <MagneticButton href="#projects">View my work</MagneticButton>
+          <MagneticButton href="/resume" variant="ghost" external>
+            Résumé
+          </MagneticButton>
           <MagneticButton href="#contact" variant="ghost">
             Get in touch
           </MagneticButton>

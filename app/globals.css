@@ -70,6 +70,32 @@ body {
   }
 }
 
+/* Print: résumé page only — clean A4 document, no chrome */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .resume-sheet {
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .resume-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

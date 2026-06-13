@@ -15,6 +15,7 @@ const display = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gauthamgtg.vercel.app"),
   title: "Gautham M — Data Analyst",
   description:
     "Data Analyst with 5.5+ years across SaaS, Quick Commerce & Fintech. Turning messy data into decisions that move revenue, retention, and efficiency.",
@@ -33,6 +34,13 @@ export const metadata: Metadata = {
     description:
       "Turning messy data into decisions that move revenue, retention, and efficiency.",
     type: "website",
+    siteName: "Gautham M — Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gautham M — Data Analyst",
+    description:
+      "Turning messy data into decisions that move revenue, retention, and efficiency.",
   },
 };
 
