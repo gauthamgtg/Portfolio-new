@@ -1,57 +1,46 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Fraunces, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-fraunces",
+  weight: ["300", "400", "500", "700", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const display = Space_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gauthamgtg.vercel.app"),
-  title: "Gautham M — Data Analyst",
+  title: "Maison Atelier | Brooklyn Hair Studio",
   description:
-    "Data Analyst with 5.5+ years across SaaS, Quick Commerce & Fintech. Turning messy data into decisions that move revenue, retention, and efficiency.",
+    "Brooklyn's most considered hair studio. Precision cuts, artisan color, and bespoke styling for the design-conscious.",
   keywords: [
-    "Data Analyst",
-    "Gautham M",
-    "SQL",
-    "Python",
-    "Tableau",
-    "Product Analytics",
-    "Portfolio",
+    "hair salon",
+    "Brooklyn",
+    "balayage",
+    "color",
+    "haircut",
+    "luxury salon",
+    "bridal hair",
   ],
-  authors: [{ name: "Gautham M" }],
   openGraph: {
-    title: "Gautham M — Data Analyst",
-    description:
-      "Turning messy data into decisions that move revenue, retention, and efficiency.",
+    title: "Maison Atelier | Brooklyn Hair Studio",
+    description: "Art applied to hair. Book your appointment.",
     type: "website",
-    siteName: "Gautham M — Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Gautham M — Data Analyst",
-    description:
-      "Turning messy data into decisions that move revenue, retention, and efficiency.",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${display.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable}`}>
+      <body className="font-dm antialiased">{children}</body>
     </html>
   );
 }
