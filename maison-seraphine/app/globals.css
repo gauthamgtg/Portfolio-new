@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   MAISON SÉRAPHINE — Design tokens
+   Quiet opulence: warm bone base, espresso ink, brushed gold,
+   whispers of dusty rose and mauve.
+   ============================================================ */
+:root {
+  --c-bone: #f3ece0; /* warm bone ivory base       */
+  --c-cream: #e9ddca; /* secondary cream            */
+  --c-espresso: #221610; /* deep espresso (text / ink) */
+  --c-cocoa: #4a352a; /* cocoa                      */
+  --c-gold: #bf9d52; /* brushed gold / brass       */
+  --c-gold-light: #e7cd8e; /* gilded highlight           */
+  --c-rose: #c8a8a0; /* dusty rose                 */
+  --c-mauve: #9c8791; /* mauve                      */
+  --c-ink: #160e09; /* near-black backdrop        */
+
+  --header-h: 88px;
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: auto; /* Lenis owns scrolling */
+}
+
+body {
+  margin: 0;
+  background-color: var(--c-bone);
+  color: var(--c-espresso);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-feature-settings: "kern", "liga", "ss01";
+  overflow-x: hidden;
+  /* Faint warm vignette so the page never reads as flat white. */
+  background-image: radial-gradient(
+    120% 80% at 50% -10%,
+    rgba(231, 205, 142, 0.12),
+    transparent 60%
+  );
+}
+
+::selection {
+  background: var(--c-gold);
+  color: var(--c-ink);
+}
+
+/* Refined scrollbar (visible only when Lenis is off / reduced-motion). */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-bone);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-cocoa);
+  border-radius: 99px;
+  border: 2px solid var(--c-bone);
+}
+
+/* ============================================================
+   Typography helpers
+   ============================================================ */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.display-hero {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 350;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Thin gold hairline rule. */
+.hairline {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(191, 157, 82, 0.6) 18%,
+    rgba(191, 157, 82, 0.6) 82%,
+    transparent
+  );
+}
+
+/* ============================================================
+   Film grain — fixed, screen-blended, gently animated.
+   GPU-cheap: a single tiled SVG noise nudged by translate.
+   ============================================================ */
+.film-grain {
+  position: fixed;
+  inset: -120% -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  animation: grain-shift 0.6s steps(4) infinite;
+  will-change: transform;
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3%, 2%);
+  }
+  50% {
+    transform: translate(2%, -3%);
+  }
+  75% {
+    transform: translate(-2%, -2%);
+  }
+  100% {
+    transform: translate(3%, 1%);
+  }
+}
+
+/* Soft volumetric light sweep used behind hero / booking. */
+.light-bloom {
+  background: radial-gradient(
+    60% 50% at 50% 40%,
+    rgba(231, 205, 142, 0.22),
+    transparent 70%
+  );
+}
+
+/* Gold shimmer sweep (loader + name reveal accents). */
+@keyframes shimmer-sweep {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+.gold-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--c-gold) 0%,
+    var(--c-gold-light) 35%,
+    #fff7e6 50%,
+    var(--c-gold-light) 65%,
+    var(--c-gold) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-sweep 5s var(--ease-lux) infinite;
+}
+
+/* Marquee accent. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hero scroll-cue: a gold tick that falls through a thin rule. */
+@keyframes scrollcue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* ============================================================
+   Custom cursor — hide native cursor on precise pointers only.
+   ============================================================ */
+@media (hover: hover) and (pointer: fine) {
+  html.cursor-hidden,
+  html.cursor-hidden * {
+    cursor: none !important;
+  }
+}
+
+/* Reveal primitives toggled by GSAP / IntersectionObserver. */
+.clip-reveal {
+  clip-path: inset(0 0 100% 0);
+}
+
+/* ============================================================
+   Accessibility — honour reduced motion everywhere.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .film-grain {
+    animation: none;
+  }
+  /* Ensure nothing is left hidden by an animation that never plays. */
+  .clip-reveal {
+    clip-path: none !important;
+  }
+}
+
+/* Utility: focus ring in brand gold for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--c-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
