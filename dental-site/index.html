@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c3b3c" />
+  <title>Lumière Dental Studio — Luxury Dentistry in San Francisco</title>
+  <meta name="description" content="Lumière Dental Studio offers award-winning cosmetic, restorative, and preventive dentistry in San Francisco. Same-day crowns, invisible aligners, and pain-free care in a spa-like setting." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lumière Dental Studio — Luxury Dentistry" />
+  <meta property="og:description" content="Award-winning cosmetic & restorative dentistry in a spa-like setting. Book your visit today." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured data for SEO / rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Lumière Dental Studio",
+    "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e4e",
+    "telephone": "+1-415-555-0148",
+    "priceRange": "$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "455 Market Street, Suite 1200",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94105",
+      "addressCountry": "US"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1284"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ===== Loader ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+        <path d="M24 6c-5 0-7 3-12 3-4 0-6-2-6 4 0 9 3 25 9 25 3 0 3-7 6-7s3 7 6 7c6 0 9-16 9-25 0-6-2-4-6-4-5 0-7-3-12-3Z" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== Announcement bar ===== -->
+  <div class="topbar">
+    <p>✨ New patient special — <strong>complimentary whitening</strong> with your first cleaning &amp; exam.</p>
+    <a href="#book" class="topbar__cta">Claim offer →</a>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="brand" aria-label="Lumière Dental Studio home">
+        <svg class="brand__icon" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+          <path d="M24 6c-5 0-7 3-12 3-4 0-6-2-6 4 0 9 3 25 9 25 3 0 3-7 6-7s3 7 6 7c6 0 9-16 9-25 0-6-2-4-6-4-5 0-7-3-12-3Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span class="brand__text">Lumière<span class="brand__sub">DENTAL STUDIO</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#technology">Technology</a>
+        <a href="#team">Our Doctors</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+14155550148" class="header__phone" aria-label="Call us">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.5.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.57 3.5a1 1 0 0 1-.25 1Z" fill="currentColor"/></svg>
+          <span>(415) 555-0148</span>
+        </a>
+        <a href="#book" class="btn btn--primary btn--sm">Book Now</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Mobile menu ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#technology">Technology</a>
+      <a href="#team">Our Doctors</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="btn btn--primary">Book an Appointment</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow reveal" data-reveal>
+            <span class="eyebrow__dot"></span> San Francisco · Est. 2009
+          </p>
+          <h1 class="hero__title reveal" data-reveal>
+            A smile worth <span class="ital">smiling</span> about.
+          </h1>
+          <p class="hero__lead reveal" data-reveal>
+            Luxury, pain-free dentistry in a calming, spa-inspired studio. From same-day
+            crowns to invisible aligners, our award-winning team crafts smiles with
+            artistry and precision.
+          </p>
+          <div class="hero__actions reveal" data-reveal>
+            <a href="#book" class="btn btn--primary btn--lg">Book your visit</a>
+            <a href="#services" class="btn btn--ghost btn--lg">Explore services</a>
+          </div>
+          <div class="hero__trust reveal" data-reveal>
+            <div class="stars" aria-label="4.9 out of 5 stars">★★★★★</div>
+            <p><strong>4.9/5</strong> from <strong>1,284</strong> happy patients</p>
+          </div>
+        </div>
+
+        <div class="hero__media reveal" data-reveal>
+          <div class="hero__card">
+            <img
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80"
+              alt="Smiling patient in a bright modern dental studio"
+              loading="eager" width="560" height="680" />
+            <div class="hero__badge">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>
+                <strong>Painless Guarantee</strong>
+                <span>Gentle, sedation-free care</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__float hero__float--rating">
+            <strong>15+ years</strong>
+            <span>of trusted care</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- marquee of trust signals -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Invisalign Diamond Provider</span><span>•</span>
+          <span>Same-Day CEREC Crowns</span><span>•</span>
+          <span>Digital Smile Design</span><span>•</span>
+          <span>Sedation Dentistry</span><span>•</span>
+          <span>Award-Winning Care</span><span>•</span>
+          <span>Invisalign Diamond Provider</span><span>•</span>
+          <span>Same-Day CEREC Crowns</span><span>•</span>
+          <span>Digital Smile Design</span><span>•</span>
+          <span>Sedation Dentistry</span><span>•</span>
+          <span>Award-Winning Care</span><span>•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal" data-reveal>
+          <span class="stat__num" data-count="35000" data-suffix="+">0</span>
+          <span class="stat__label">Smiles transformed</span>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <span class="stat__num" data-count="15" data-suffix="+">0</span>
+          <span class="stat__label">Years of excellence</span>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <span class="stat__num" data-count="4.9" data-decimals="1">0</span>
+          <span class="stat__label">Average patient rating</span>
+        </div>
+        <div class="stat reveal" data-reveal>
+          <span class="stat__num" data-count="98" data-suffix="%">0</span>
+          <span class="stat__label">Would recommend us</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal" data-reveal><span class="eyebrow__dot"></span> What we do</p>
+          <h2 class="section__title reveal" data-reveal>Comprehensive care, <span class="ital">beautifully</span> delivered</h2>
+          <p class="section__sub reveal" data-reveal>Every treatment is tailored to you — combining advanced technology with a gentle, unhurried touch.</p>
+        </div>
+
+        <div class="services__grid">
+          <article class="service reveal" data-reveal>
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 3c-3 0-4 2-7 2-2 0-3-1-3 2 0 5 2 14 5 14 2 0 2-4 3-4s1 4 3 4c3 0 5-9 5-14 0-3-1-2-3-2-3 0-4-2-6-2Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Cosmetic Dentistry</h3>
+            <p>Porcelain veneers, professional whitening, and digital smile design for a flawless, natural finish.</p>
+            <a href="#book" class="service__link">Learn more →</a>
+          </article>
+
+          <article class="service service--featured reveal" data-reveal>
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Invisible Aligners</h3>
+            <p>Straighten your smile discreetly with Invisalign® — we're a top 1% Diamond provider nationwide.</p>
+            <a href="#book" class="service__link">Learn more →</a>
+            <span class="service__tag">Most popular</span>
+          </article>
+
+          <article class="service reveal" data-reveal>
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Dental Implants</h3>
+            <p>Permanent, natural-looking tooth replacement with guided 3D-planned precision and lasting comfort.</p>
+            <a href="#book" class="service__link">Learn more →</a>
+          </article>
+
+          <article class="service reveal" data-reveal>
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Preventive Care</h3>
+            <p>Gentle cleanings, exams, and early detection to keep your smile healthy for a lifetime.</p>
+            <a href="#book" class="service__link">Learn more →</a>
+          </article>
+
+          <article class="service reveal" data-reveal>
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 2v20M5 7l7-4 7 4M5 17l7 4 7-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Same-Day Crowns</h3>
+            <p>CEREC® technology designs, mills, and fits a custom crown in a single visit — no temporaries.</p>
+            <a href="#book" class="service__link">Learn more →</a>
+          </article>
+
+          <article class="service reveal" data-reveal>
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 22a8 8 0 0 0 8-8c0-4-3-7-3-11H7c0 4-3 7-3 11a8 8 0 0 0 8 8Z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3>Sedation &amp; Comfort</h3>
+            <p>Anxiety-free visits with calming sedation options, noise-cancelling headphones, and warm blankets.</p>
+            <a href="#book" class="service__link">Learn more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About / split ===== -->
+    <section class="section about" id="about">
+      <div class="container about__inner">
+        <div class="about__media reveal" data-reveal>
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80"
+            alt="Calm, modern dental treatment room with natural light"
+            loading="lazy" width="560" height="640" />
+          <div class="about__stat">
+            <strong>1.2k+</strong>
+            <span>5-star reviews</span>
+          </div>
+        </div>
+        <div class="about__copy">
+          <p class="eyebrow reveal" data-reveal><span class="eyebrow__dot"></span> Why Lumière</p>
+          <h2 class="section__title reveal" data-reveal>Dentistry that feels like a <span class="ital">retreat</span></h2>
+          <p class="reveal" data-reveal>We reimagined the dental visit from the ground up. No clinical chill, no rushed appointments — just thoughtful, personalized care in a space designed to put you at ease.</p>
+          <ul class="checklist reveal" data-reveal>
+            <li><span class="check">✓</span> Aromatherapy, heated chairs &amp; on-demand entertainment</li>
+            <li><span class="check">✓</span> Transparent pricing &amp; flexible financing</li>
+            <li><span class="check">✓</span> Most major insurance &amp; in-house membership plan</li>
+            <li><span class="check">✓</span> Emergency &amp; same-day appointments available</li>
+          </ul>
+          <a href="#book" class="btn btn--primary btn--lg reveal" data-reveal>Meet your new dentist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Technology ===== -->
+    <section class="section technology" id="technology">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal" data-reveal><span class="eyebrow__dot"></span> Advanced technology</p>
+          <h2 class="section__title reveal" data-reveal>Precision you can <span class="ital">feel</span></h2>
+          <p class="section__sub reveal" data-reveal>State-of-the-art tools mean faster, safer, and more comfortable treatment.</p>
+        </div>
+        <div class="tech__grid">
+          <div class="tech__card reveal" data-reveal>
+            <span class="tech__num">01</span>
+            <h3>3D Cone-Beam Imaging</h3>
+            <p>Ultra-low-radiation scans for pinpoint diagnostics and meticulous implant planning.</p>
+          </div>
+          <div class="tech__card reveal" data-reveal>
+            <span class="tech__num">02</span>
+            <h3>Intraoral Scanning</h3>
+            <p>Goodbye goopy impressions. Digital scans are fast, accurate, and far more comfortable.</p>
+          </div>
+          <div class="tech__card reveal" data-reveal>
+            <span class="tech__num">03</span>
+            <h3>Soft-Tissue Laser</h3>
+            <p>Minimally invasive treatment with less bleeding, less discomfort, and faster healing.</p>
+          </div>
+          <div class="tech__card reveal" data-reveal>
+            <span class="tech__num">04</span>
+            <h3>CEREC Same-Day Mill</h3>
+            <p>Custom crowns and inlays crafted and placed in a single appointment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Team ===== -->
+    <section class="section team" id="team">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal" data-reveal><span class="eyebrow__dot"></span> Meet the team</p>
+          <h2 class="section__title reveal" data-reveal>Doctors who truly <span class="ital">care</span></h2>
+          <p class="section__sub reveal" data-reveal>Compassionate experts dedicated to making every visit exceptional.</p>
+        </div>
+        <div class="team__grid">
+          <article class="member reveal" data-reveal>
+            <div class="member__photo">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80" alt="Dr. Elena Moreau" loading="lazy" width="400" height="480" />
+            </div>
+            <h3>Dr. Elena Moreau</h3>
+            <p class="member__role">Founder · Cosmetic &amp; Restorative</p>
+            <p class="member__bio">A pioneer in digital smile design with 15+ years crafting confident smiles.</p>
+          </article>
+          <article class="member reveal" data-reveal>
+            <div class="member__photo">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80" alt="Dr. Marcus Bell" loading="lazy" width="400" height="480" />
+            </div>
+            <h3>Dr. Marcus Bell</h3>
+            <p class="member__role">Implant &amp; Oral Surgery</p>
+            <p class="member__bio">Board-certified surgeon known for gentle, precise implant work.</p>
+          </article>
+          <article class="member reveal" data-reveal>
+            <div class="member__photo">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=80" alt="Dr. Priya Anand" loading="lazy" width="400" height="480" />
+            </div>
+            <h3>Dr. Priya Anand</h3>
+            <p class="member__role">Orthodontics &amp; Invisalign</p>
+            <p class="member__bio">Diamond-tier aligner specialist who makes straightening effortless.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Reviews ===== -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow reveal" data-reveal><span class="eyebrow__dot"></span> Patient stories</p>
+          <h2 class="section__title reveal" data-reveal>Loved by <span class="ital">thousands</span></h2>
+        </div>
+        <div class="reviews__grid">
+          <figure class="review reveal" data-reveal>
+            <div class="stars">★★★★★</div>
+            <blockquote>“I used to dread the dentist. Lumière completely changed that — it feels like a spa, and my Invisalign results are unreal.”</blockquote>
+            <figcaption><strong>Sophia R.</strong> · Invisalign patient</figcaption>
+          </figure>
+          <figure class="review reveal" data-reveal>
+            <div class="stars">★★★★★</div>
+            <blockquote>“Got a crown done in one visit with zero pain. The team explained everything and the office is gorgeous.”</blockquote>
+            <figcaption><strong>James T.</strong> · Same-day crown</figcaption>
+          </figure>
+          <figure class="review reveal" data-reveal>
+            <div class="stars">★★★★★</div>
+            <blockquote>“Dr. Moreau gave me the smile I always wanted. Genuinely the best healthcare experience I've ever had.”</blockquote>
+            <figcaption><strong>Aaliyah K.</strong> · Veneers</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Booking CTA ===== -->
+    <section class="section book" id="book">
+      <div class="container book__inner">
+        <div class="book__copy">
+          <p class="eyebrow reveal" data-reveal><span class="eyebrow__dot"></span> Book an appointment</p>
+          <h2 class="section__title reveal" data-reveal>Your best smile starts <span class="ital">here</span></h2>
+          <p class="reveal" data-reveal>Request a visit and our team will confirm within one business day. New patients receive complimentary whitening with their first cleaning &amp; exam.</p>
+          <ul class="book__contact reveal" data-reveal>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.5.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.2 2.4.57 3.5a1 1 0 0 1-.25 1Z" fill="currentColor"/></svg>
+              <a href="tel:+14155550148">(415) 555-0148</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              <a href="mailto:hello@lumieredental.com">hello@lumieredental.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span>455 Market Street, Suite 1200, San Francisco</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="book__form reveal" data-reveal id="bookForm" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Appleseed" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(415) 555-0148" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">I'm interested in</label>
+            <select id="service" name="service">
+              <option>New patient exam &amp; cleaning</option>
+              <option>Cosmetic consultation</option>
+              <option>Invisalign / aligners</option>
+              <option>Dental implants</option>
+              <option>Emergency visit</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Anything we should know? <span class="muted">(optional)</span></label>
+            <textarea id="message" name="message" rows="3" placeholder="Preferred days/times, concerns, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Request appointment</button>
+          <p class="form__note">By submitting, you agree to be contacted about your request. We never share your information.</p>
+          <p class="form__success" id="formSuccess" hidden>✓ Thank you! We've received your request and will reach out within one business day.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="brand brand--light">
+          <svg class="brand__icon" viewBox="0 0 48 48" width="34" height="34" aria-hidden="true"><path d="M24 6c-5 0-7 3-12 3-4 0-6-2-6 4 0 9 3 25 9 25 3 0 3-7 6-7s3 7 6 7c6 0 9-16 9-25 0-6-2-4-6-4-5 0-7-3-12-3Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span class="brand__text">Lumière<span class="brand__sub">DENTAL STUDIO</span></span>
+        </a>
+        <p>Luxury, pain-free dentistry in the heart of San Francisco. Crafting confident smiles since 2009.</p>
+        <div class="footer__social" aria-label="Social links">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <a href="#services">Cosmetic Dentistry</a>
+        <a href="#services">Invisible Aligners</a>
+        <a href="#services">Dental Implants</a>
+        <a href="#services">Same-Day Crowns</a>
+        <a href="#services">Preventive Care</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Practice</h4>
+        <a href="#about">About us</a>
+        <a href="#team">Our doctors</a>
+        <a href="#technology">Technology</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#book">Book online</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Visit us</h4>
+        <p>455 Market Street, Suite 1200<br/>San Francisco, CA 94105</p>
+        <p><strong>Mon–Fri</strong> 8am – 6pm<br/><strong>Sat</strong> 9am – 2pm</p>
+        <a href="tel:+14155550148" class="footer__phone">(415) 555-0148</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Lumière Dental Studio. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- floating book button (mobile) -->
+  <a href="#book" class="fab" aria-label="Book an appointment">Book</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
