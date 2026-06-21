@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 640" width="560" height="640" role="img" aria-label="Calm modern dental treatment room illustration">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ecf7f3"/>
+      <stop offset="1" stop-color="#d8efe9"/>
+    </linearGradient>
+    <linearGradient id="cwin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e3cd9c" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#ecf7f3" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="cchair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#166364"/>
+      <stop offset="1" stop-color="#0c3b3c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="560" height="640" fill="url(#cbg)"/>
+
+  <!-- window with light -->
+  <rect x="60" y="60" width="200" height="260" rx="12" fill="url(#cwin)"/>
+  <line x1="160" y1="60" x2="160" y2="320" stroke="#ffffff" stroke-opacity="0.6" stroke-width="3"/>
+  <line x1="60" y1="190" x2="260" y2="190" stroke="#ffffff" stroke-opacity="0.6" stroke-width="3"/>
+
+  <!-- plant -->
+  <g transform="translate(330 150)" fill="none" stroke="#2a8a86" stroke-width="5" stroke-linecap="round">
+    <path d="M40 150c0-50-30-70-30-110"/>
+    <path d="M40 150c0-40 26-58 26-92"/>
+    <path d="M40 150c0-30-14-44-14-70"/>
+  </g>
+  <path d="M348 300h64l-10 40h-44z" fill="#c8a45c"/>
+
+  <!-- floor line -->
+  <line x1="0" y1="430" x2="560" y2="430" stroke="#0c3b3c" stroke-opacity="0.12" stroke-width="2"/>
+
+  <!-- dental chair -->
+  <g transform="translate(150 360)">
+    <rect x="0" y="60" width="240" height="70" rx="26" fill="url(#cchair)"/>
+    <rect x="-10" y="10" width="120" height="80" rx="24" fill="url(#cchair)" transform="rotate(-12 50 50)"/>
+    <rect x="100" y="120" width="40" height="120" rx="14" fill="#0c3b3c"/>
+    <ellipse cx="120" cy="250" rx="90" ry="16" fill="#0c3b3c" opacity="0.12"/>
+  </g>
+
+  <!-- overhead lamp -->
+  <g transform="translate(420 60)">
+    <line x1="20" y1="0" x2="20" y2="80" stroke="#0c3b3c" stroke-opacity="0.3" stroke-width="4"/>
+    <circle cx="20" cy="96" r="22" fill="#ffffff" stroke="#c8a45c" stroke-width="4"/>
+    <circle cx="20" cy="96" r="8" fill="#e3cd9c"/>
+  </g>
+</svg>
